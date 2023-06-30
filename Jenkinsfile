@@ -18,15 +18,15 @@ pipeline {
                             tty: true
                 """
         }
-        stages {
-            stage('Test python') {
-                steps {
-                    container('python') {
-                        sh "pip install -r requirements.txt"
-                        sh "python test.py"
-                    }
+    stages {
+        stage('Test python') {
+             steps {
+                container('python') {
+                    sh "pip install -r requirements.txt"
+                    sh "python test.py"
                 }
             }
         }
-    }
+   }
+  }
 }
